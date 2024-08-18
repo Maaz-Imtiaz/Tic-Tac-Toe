@@ -3,26 +3,24 @@
   padding: 0;
 }
 
-.container {
-  height: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 body {
-  background-color: #548687;
+  background-color: #2a9d8f;
   text-align: center;
 }
 
-.game {
-  height: 400px;
-  width: 400px;
+.container {
+  height: auto;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  padding: 20px;
+}
+
+.game {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  width: 360px; /* Adjusted for 3 columns of 120px each */
 }
 
 .box {
@@ -32,17 +30,11 @@ body {
   border-radius: 10px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
   font-size: 55px;
-  color: #b0314e;
-  background-color: #ffffffc7;
+  color: #90e0ef;
+  background-color: #264653;
 }
-#reset-btn {
-  padding: 1rem;
-  font-size: 1.25rem;
-  background-color: #191913;
-  color: #fff;
-  border-radius: 1rem;
-  border: none;
-}
+
+#reset-btn,
 #new-btn {
   padding: 1rem;
   font-size: 1.25rem;
@@ -50,11 +42,57 @@ body {
   color: #fff;
   border-radius: 1rem;
   border: none;
+  margin-top: 20px;
+  cursor: pointer;
 }
+
 #msg {
-  color: #ffffc7;
+  color: #03071e;
   font-size: 55px;
 }
+
 .hide {
   display: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .game {
+    grid-template-columns: repeat(3, 1fr);
+    width: 90%;
+  }
+
+  .box {
+    height: 80px;
+    width: 80px;
+    font-size: 40px;
+  }
+
+  #msg {
+    font-size: 40px;
+  }
+
+  #reset-btn,
+  #new-btn {
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .box {
+    height: 60px;
+    width: 60px;
+    font-size: 30px;
+  }
+
+  #msg {
+    font-size: 30px;
+  }
+
+  #reset-btn,
+  #new-btn {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
 }
